@@ -1,0 +1,35 @@
+#landing-page > div:nth-child(1) {
+	background-color: #125688;
+	height: 300px;
+	padding-top: 200px;
+}
+
+#landing-page > div:nth-child(1) > div.col-xs-4 > img {
+	width: 200px; 
+	height: auto;
+}
+
+
+#login > div > form > div:nth-child(1) > img {
+	width: 130px; 
+	height: auto;
+	text-align: center;
+}
+
+#register > div > form > div:nth-child(1) > img {
+	width: 130px; 
+	height: auto;
+	text-align: center;
+}
+
+#btn-plus {
+    background: #052137;
+    margin-top: .5em;
+    margin-left: 8em;
+    border-color: #052137;
+    color: white;
+}
+
+.navbar {
+    background-color: #125688;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Instagram Clone</title>
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+
+<!-- Home / Landing page -->
+	<div class="container-fluid" id="landing-page">
+		<div class="row">
+			<div class="col-xs-6">
+			</div>
+			<div class="col-xs-4">
+					<img src="styles/brand-solid-white.png">
+			</div>
+			<div class="col-xs-2">
+				<button id="btn-home-login">Log In</button> 
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-5 col-xs-offset-6">
+				<h4>Capture and share the world's moments</h4>
+				<p>Instagram is a free and simple way to share your life and keep up with other people.</p>
+			</div>
+		</div>
+	</div>
+<!-- Login page -->
+	<section class="page" id="login">
+			<div class="container">
+				<form>
+					<div>
+						<img class="blue-logo" src="styles/brand-solid-blue.png">
+					</div>
+					 <div class="form-group">
+					    <label for="exampleInputEmail1">Username</label>
+					    <input type="text" class="form-control" id="login-username" placeholder="Enter Username">
+					 </div>
+					 <div class="form-group">
+					    <label for="exampleInputPassword1">Password</label>
+					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					    <button type="button" class="btn-success" id="btn-enter-login">Log In</button>
+					</div>
+				</form>
+			</div>	
+		</section>
+
+		<!-- Registration page -->
+	<section class="page" id="register">
+			<div class="container">
+				<form>
+					<div>
+						<h3>New User Registration</h3>
+						<img class="blue-logo" src="styles/brand-solid-blue.png">
+					</div>
+					 <div class="form-group">
+					    <label>Full Name</label>
+					    <input type="text" class="form-control" id="register-fullname-input" placeholder="Enter full name">
+					 </div>
+					 <div class="form-group">
+					    <label>Username</label>
+					    <input type="text" class="form-control" id="register-username-input" placeholder="Choose Username">
+					 </div>
+					  <div class="form-group">
+					    <label>Password</label>
+					    <input type="text" class="form-control" id="register-password-input" placeholder="Choose a password">
+					 </div>
+					 <div class="form-group">
+					    <label>Re-enter Password</label>
+					    <input type="password" class="form-control" id="register-password-reenter-input" placeholder="Re-enter password">
+					    <button type="button" class="btn-success" id="btn-enter-login">Log In</button>
+					</div>
+				</form>
+			</div>	
+		</section>
+
+		<!-- Feed/User home -->
+		<section class"page" id="user-home">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="btn btn-default" id="btn-plus"><span class="glyphicon glyphicon-plus"></span></button>
+					</div>
+				</div>
+			</nav>
+
+			<div class="container-fluid" id="add-img-form-container">
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1">
+						<form id="form-add-image">
+							<div class="form-group">
+								<input type="text" class="form-control" id="input-url" placeholder="Image URL">
+									<div class="alert alert-danger" role="alert" id="url-alert">
+									  	<span class="glyphicon glyphicon-exclamation-sign"></span>
+									  	<span class="sr-only">Error:</span>Enter a valid URL
+									</div>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="input-caption" placeholder="Image Caption">
+								<div class="alert alert-danger" role="alert" id="caption-alert">
+									  	<span class="glyphicon glyphicon-exclamation-sign"></span>
+									  	<span class="sr-only">Error:</span>You must enter a caption
+									</div>
+							</div>
+							<div class="btn-group pull-right" role="group">
+								<button type="button" class="btn-lg btn-default" id="btn-cancel">Cancel</button>
+								<button type="button" class="btn-lg btn-success" id="btn-add-image"><span class="glyphicon glyphicon-picture"></span> Add Image</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+	<!-- image template -->
+	<script type="text/template" id="image-row-template">
+		<div class="image-row" data-cid="<%= model.cid %>">
+			<img src="<%= model.get('url') %>">
+			<div class="image-caption">
+				<%= model.get('caption') %>
+			</div>
+			<!-- actual text of comment, template inserts here -->
+			<div class="comment-list"></div>
+			<!-- enter comment in this form -->
+			<form class="comment-form" data-form-cid="<%= model.cid %>">
+				<input type="text" class="comment-input">
+				<button type="submit">Add Comment</button>
+			</form>
+		</div>
+	</script>
+
+	<!-- comment template -->
+	<script type="text/template" id="comment-row-template">
+		<div class="comment-row">
+			<%= model.get('text') %>
+		</div>
+	</script>
+		
+
+<script type="text/javascript" src="scripts/combined.js"></script>
+</body>
+</html>
