@@ -6,5 +6,5 @@ var UserModel = require('../models/UserModel');
 
 module.exports = Backbone.Collection.extend({
 	model: UserModel, 
-	url: ''
+	url: 'http://tiny-pizza-server.herokuapp.com/collections/instagram-users'
 });

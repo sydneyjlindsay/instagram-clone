@@ -29,17 +29,18 @@
 <!-- Login page -->
 	<section class="page" id="login">
 			<div class="container">
-				<form>
+				<form id="form-login">
 					<div>
 						<img class="blue-logo" src="styles/brand-solid-blue.png">
 					</div>
+					<div class="error" id="login-error"></div>
 					 <div class="form-group">
-					    <label for="exampleInputEmail1">Username</label>
+					    <label>Username</label>
 					    <input type="text" class="form-control" id="login-username" placeholder="Enter Username">
 					 </div>
 					 <div class="form-group">
-					    <label for="exampleInputPassword1">Password</label>
-					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					    <label>Password</label>
+					    <input type="password" class="form-control" id="login-password" placeholder="Password">
 					    <button type="button" class="btn-success" id="btn-enter-login">Log In</button>
 					</div>
 				</form>
@@ -49,11 +50,12 @@
 		<!-- Registration page -->
 	<section class="page" id="register">
 			<div class="container">
-				<form>
+				<form id="form-register">
 					<div>
 						<h3>New User Registration</h3>
 						<img class="blue-logo" src="styles/brand-solid-blue.png">
 					</div>
+					<div class="error" id="register-error"></div>
 					 <div class="form-group">
 					    <label>Full Name</label>
 					    <input type="text" class="form-control" id="register-fullname-input" placeholder="Enter full name">
@@ -66,17 +68,13 @@
 					    <label>Password</label>
 					    <input type="text" class="form-control" id="register-password-input" placeholder="Choose a password">
 					 </div>
-					 <div class="form-group">
-					    <label>Re-enter Password</label>
-					    <input type="password" class="form-control" id="register-password-reenter-input" placeholder="Re-enter password">
-					    <button type="button" class="btn-success" id="btn-enter-login">Log In</button>
-					</div>
+					    <button type="button" class="btn-success" id="btn-enter-login">Register</button>
 				</form>
 			</div>	
 		</section>
 
 		<!-- Feed/User home -->
-		<section class"page" id="user-home">
+		<section class"page" id="feed">
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<div class="navbar-header">
@@ -85,7 +83,7 @@
 				</div>
 			</nav>
 
-			<div class="container-fluid" id="add-img-form-container">
+			<div class="container-fluid page" id="add-img-form-container">
 				<div class="row">
 					<div class="col-xs-10 col-xs-offset-1">
 						<form id="form-add-image">

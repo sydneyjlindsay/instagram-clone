@@ -11,7 +11,8 @@ module.exports = Backbone.Router.extend({
     },
 
     home: function() {
-        $('#register').hide();
+        $('.page').hide();
+        $('#feed').hide();
         $('#landing-page').show();
         console.log('test string for route');
     },
